@@ -70,6 +70,6 @@ while True:
         print(f'{jeka}: Нет! НЕТ! НЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕТ!!!!')
         time.sleep(2)
         wo(0, 'open', 'C:/Users/user/Pictures/Saved Pictures/Surprise).gif', None, '.', 1)
-        time.sleep(3.7)
-        # os.system('shutdown /r /t 1')
+        time.sleep(2.8)
+        os.system('shutdown /r /t 1')
         break
