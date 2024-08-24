@@ -2,17 +2,10 @@ import datetime
 import webbrowser
 import os
 import win32api
+import ttt
+import time
 
-
-board = ['[ ]', '[ ]', '[ ]'], ['[ ]', '[ ]', '[ ]'], ['[ ]', '[ ]', '[ ]']
-
-def tic_tac_toe(player, enemy):
-    print(*board, sep='\n')
-    active = True
-    while active:
-        print(f'{jeka}: Ваш ход!\n()')
-        enter = input(f'{username}: ')
-
+board = [[' '], [' '], [' ']], [[' '], [' '], [' ']], [[' '], [' '], [' ']]
 
 jeka = 'JEKA'
 
@@ -50,28 +43,33 @@ while True:
     if 'игра' in something:
         print(f'{jeka}: О, круто! Во что сыграем?\nМожет, в крестики-нолики?\n(да/нет)')
         enter = input(f'{username}: ')
-        if enter.lower == 'да':
+        if 'да' in enter.lower():
             print(f'{jeka}: Круто, тогда погнали!\nВы крестиками (1) или ноликами (2)?')
             enter = input(f'{username}: ')
-            check = True
-            while check:
+            going = True
+            while going:
                 if 'крестики' in enter.lower() or '1' in enter.lower():
-                    player = 'x'
-                    enemy = 'o'
+                    player = ['x']
+                    enemy = ['o']
+                    going = False
                 elif'нолики' in enter.lower() or '2' in enter.lower():
-                    player = 'o'
-                    enemy = 'x'
+                    player = ['o']
+                    enemy = ['x']
+                    going = False
                 elif 'передумал' in enter.lower():
                     print(f'{jeka}: Ну... хорошо тогда.')
-                    check = False
-    # if 'пока' in something or 'бай' in something or 'до свидания' in something:
-    #     print(f'{jeka}: ...')
-    #     time.sleep(3)
-    #     print(f'{jeka}: Но... я не хочу умирать!')
-    #     time.sleep(2)
-    #     print(f'{jeka}: Нет! НЕТ! НЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕТ!!!!')
-    #     time.sleep(2)
-    #     wo(0, 'open', 'C:/Users/user/Pictures/Saved Pictures/Surprise).gif', None, '.', 1)
-    #     time.sleep(3.7)
-    #     # os.system('shutdown /r /t 1')
-    #     break
+                    going = False
+                else:
+                    print(f'{jeka}: Эм... Окей, давай ещё раз?..')
+            ttt.tic_tac_toe(player, enemy)
+    if 'пока' in something or 'бай' in something or 'до свидания' in something:
+        print(f'{jeka}: ...')
+        time.sleep(3)
+        print(f'{jeka}: Но... я не хочу умирать!')
+        time.sleep(2)
+        print(f'{jeka}: Нет! НЕТ! НЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕТ!!!!')
+        time.sleep(2)
+        wo(0, 'open', 'C:/Users/user/Pictures/Saved Pictures/Surprise).gif', None, '.', 1)
+        time.sleep(3.7)
+        # os.system('shutdown /r /t 1')
+        break
