@@ -36,7 +36,7 @@ while True:
             print(f"{jeka}: Считаю/решаю...")
             time.sleep(3)
             print(f"{jeka}: Готово! Ответ: {eval(enter[enter.find(' '):])}")
-    if 'пои' in something or 'найди' in something:  # Поиск информации в интернете
+    if 'поис' in something or 'найди' in something or 'поищ' in something:  # Поиск информации в интернете
         if drunk:
             print(f'{jeka}: Щас...')
             time.sleep(10)
@@ -85,6 +85,7 @@ while True:
         enter = input(f'{username}: ')
         if 'да' in enter.lower():
             print(f'{jeka}: Круто, тогда погнали!')
+            time.sleep(1)
             webbrowser.open_new_tab('https://tictactoefree.com')
     if 'пока' in something or 'бай' in something or 'до свидания' in something:
         print(f'{jeka}: ...')
